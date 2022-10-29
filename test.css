@@ -1,0 +1,221 @@
+body {
+    background: url('./img/background.jpg') center fixed, #727272;
+    background-blend-mode: multiply;
+    background-size: cover;
+    font: 12pt sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.block {
+    max-width: 800px;
+    background: #fff;
+    text-align: center;
+    margin: 30px auto 0;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #969696;
+}
+
+.name {
+    padding-top: 1%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.question {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.progress{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.progress-bar{
+    background-color: #ef9a1e;
+    border-radius: 20px;
+    transition: 400ms linear;
+}
+
+.question-img {
+    width: 70%;
+    background: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #5d5d5d;
+}
+
+.test {
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.name h2{
+    animation: aniQuestion 1s;
+}
+
+.question h2{
+    animation: aniQuestion 1s;
+}
+
+@keyframes aniQuestion {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.answers {
+    text-align: left;
+    margin: 20px 10%;
+}
+
+.answer {
+    margin-bottom: 10px;
+    animation: ani 0.5s forwards;
+}
+
+@keyframes ani {
+    0% {
+        transform: translateX(-4%);
+    }
+    50% {
+        transform: translateX(1%);
+    }
+}
+
+.person{
+    position: relative;
+    padding-bottom: 30px;
+}
+.person-background {
+    width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #5d5d5d;
+    opacity: 0.7;
+    max-height: 300px;
+    animation: person-background 5s forwards;
+}
+.person-photo {
+    width: 30%;
+    height: 76%;
+    position: absolute;
+    border-radius: 12px;
+    top: 17%;
+    right: 35%;
+    animation: person-photo 5s forwards;
+}
+
+@keyframes person-photo {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(80%);
+    }
+}
+
+@keyframes person-background {
+    0% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.answer input[type=radio] {
+    display: none;
+}
+
+.answer label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 0;
+    line-height: 18px;
+    user-select: none;
+}
+
+.answer label:before {
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background: url(./img/radio/radio-1.png) 0 0 no-repeat;
+}
+
+/* Checked */
+.answer input[type=radio]:checked + label:before {
+    background: url(./img/radio/radio-2.png) 0 0 no-repeat;
+}
+
+/* Hover */
+.answer label:hover:before {
+    filter: brightness(120%);
+}
+
+/* Disabled */
+.answer input[type=radio]:disabled + label:before {
+    filter: grayscale(100%);
+}
+
+.submit-feedback {
+    padding: 10px 30px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 16px;
+    background-color: #ff8d4e;
+    color: #53488d;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    animation: animatedBackground 5s linear infinite alternate;
+    transition: all 0.4s;
+}
+
+.submit-feedback:hover {
+    border-radius: 0;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.scream{
+    text-align: right;
+    margin-right: 12px;
+}
+
+.scream-btn{
+    color: #ff8d4e;
+    text-decoration: none;
+    font-size: 12px;
+}
+.scream-btn:hover{
+    color: #ff5f04;
+    font-weight: bold;
+}
+
+.screamer {
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    display: none;
+}
